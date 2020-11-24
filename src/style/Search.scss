@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Poppins&display=swap');
+$color-azure: #3a86ff;
+$color-white: #fcfcfc;
+
+#search {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: $color-azure;
+    font-family: 'Nerko One', cursive;
+    text-align: center;
+    font-size: 4em;
+
+    margin-bottom: 0.2em;
+  }
+
+  #search-box {
+    input {
+      color: $color-azure;
+      text-align: center;
+      padding: 0.2em 0.5em;
+      border: 2px solid $color-azure;
+      border-radius: 1em;
+      width: 10em;
+
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5em;
+    }
+  }
+}
