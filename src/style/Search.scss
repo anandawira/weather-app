@@ -3,17 +3,16 @@ $color-azure: #3a86ff;
 $color-white: #fcfcfc;
 
 #search {
-  border-bottom: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 
   h1 {
     color: $color-azure;
     font-family: 'Nerko One', cursive;
     text-align: center;
-    font-size: 4em;
+    font-size: 6em;
 
     margin-bottom: 0.2em;
   }

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$color-azure: #3a86ff;
+#result {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 10em;
+
+  #wrapper {
+    color: #fff;
+    background-color: $color-azure;
+    width: fit-content;
+    height: fit-content;
+    padding: 2em 4em;
+    scale: 1.5;
+    box-shadow: 0px 0px 30px 10px gray;
+    p#name {
+      text-align: left;
+      font-size: 2em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    #weather {
+      display: flex;
+      align-items: center;
+      img {
+        margin-left: -1.5em;
+      }
+      p#temp {
+        font-size: 4em;
+        cursor: pointer;
+      }
+    }
+    p#desc{
+        text-transform: capitalize;
+        font-size: 1.4em;
+    }
+  }
+}
