@@ -5,6 +5,7 @@ export default function Result(props) {
   const [result, setResult] = useState({});
   const [units, setUnits] = useState('metric');
   const [showResult, setShowResult] = useState(false);
+  const [showNotFound, setShowNotFound] = useState(false);
 
   function getFahrenheit() {
     const celcius = result.temp;
@@ -20,13 +21,15 @@ export default function Result(props) {
   }
 
   async function fetchWeather(location) {
+    setShowNotFound(false);
     const apiKey = '2e26dda3d1cad9a9762aaef146d6df48';
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`,
       );
       if (!response.ok) {
         setShowResult(false);
+        setShowNotFound(true);
         const message = `An error has occured: ${response.status}`;
         throw new Error(message);
       }
@@ -73,7 +76,15 @@ export default function Result(props) {
           </div>
           <p id="desc">{result.weather[0].description}</p>
         </div>
-      ) : null}
+      ) : showNotFound ? (
+        <div id="notFound">
+          Error Occured. Can't find the keyword or network problem.
+        </div>
+      ) : (
+        <div className="wrapper">
+          <div class="loader"></div>
+        </div>
+      )}
     </div>
   );
 }
